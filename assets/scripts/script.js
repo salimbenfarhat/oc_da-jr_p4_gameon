@@ -1,0 +1,4 @@
+function booking() {
+  // Initialisations
+  initAddEventListenerModal()
+}
