@@ -8,13 +8,12 @@
   margin: 0;
   padding: 0;
 }
-/* Landing Page */
 
+/* Landing Page */
 body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  background-image: url("background.png");
   font-family: var(--font-default);
   font-size: 18px;
   max-width: 1300px;
@@ -52,20 +51,12 @@ img {
   font-family: Roboto, sans-serif;
 }
 
-.topnav a:hover {
+.topnav a:hover, .topnav a.active {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
-}
-
-.topnav a.active {
-  background-color: #ff0000;
-  color: #ffffff;
-  border-radius: 15px;
-}
-
-.topnav a.active span {
-  border-bottom: 2px solid #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .topnav .icon {
@@ -169,7 +160,6 @@ main {
   top: 0;
   height: 100%;
   width: 100%;
-  overflow: auto;
   background-color: rgba(26, 39, 156, 0.4);
 }
 
@@ -203,6 +193,10 @@ label {
   display: inline-block;
   margin-bottom: 11px;
 }
+.required {
+  color: red;
+  font-weight: bold;
+}
 input {
   padding: 8px;
   border: 0.8px solid #ccc;
@@ -223,7 +217,6 @@ input {
   display: block;
   margin-top: 7px;
   margin-bottom: 7px;
-  text-align: right;
   line-height: 0.3;
   opacity: 0;
   transition: 0.3s;
@@ -232,7 +225,16 @@ input {
   opacity: 1;
 }
 .formData[data-error-visible="true"] .text-control {
+  color: #e54858;
+}
+.formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
+}
+.formData[data-error-visible="false"] .text-control {
+  color: #279e7a;
+}
+.formData[data-error-visible="false"] .text-control {
+  border: 2px solid #279e7a;
 }
 /* 
 input[data-error]::after {
