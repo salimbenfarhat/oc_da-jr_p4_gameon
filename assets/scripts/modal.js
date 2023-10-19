@@ -20,15 +20,40 @@ closeBtn.addEventListener("click", closeModal);
 // Close modal form
 function closeModal() {
   modalbg.classList.remove("active");
+
+  // Remove the confirmation message and the "Close" button if they already exist
+  const confirmationMessage = document.getElementById("confirmationMessage");
+  if (confirmationMessage) {
+    document.querySelector(".modal-body").removeChild(confirmationMessage);
+  }
+
+  const btnCloseModal = document.getElementById("btnCloseModal");
+  if (btnCloseModal) {
+    document.querySelector(".modal-body").removeChild(btnCloseModal);
+  }
+
+  // Reset the form by emptying it
+  const form = document.forms.reserve;
+  form.reset();
+
+  // Remove the data-error-visible attribute from .formData elements
+  const formDataElements = document.querySelectorAll(".formData");
+  formDataElements.forEach((element) => {
+    element.removeAttribute("data-error-visible");
+  });
+  
+  // Redisplay the form
+  form.style.display = "block";
 }
 
+
 function initAddEventListenerModal() {
-  // Ajoute un écouteur d'événements au bouton qui lance le modal
+  // Add an event listener to the button that launches the modal
   modalBtn.addEventListener("click", () => {
       launchModal()
   })
 
-  // Ajoute un écouteur d'événements à l'arrière-plan du modal
+  // Add an event listener to the background of the modal
   modalbg.addEventListener("click", (event) => {
       if (event.target === modalbg) {
           closeModal()
