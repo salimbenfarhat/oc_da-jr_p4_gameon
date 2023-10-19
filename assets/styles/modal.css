@@ -63,7 +63,7 @@ img {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .topnav a {display: none;}
   .topnav a.icon {
     float: right;
@@ -171,6 +171,7 @@ main {
   margin: 5% auto;
   width: 100%;
   max-width: 500px;
+  min-height: 765px;
   animation-name: modalopen;
   animation-duration: var(--modal-duration);
   background: #232323;
@@ -179,6 +180,18 @@ main {
   position: relative;
   color: #fff;
   padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#confirmationMessage {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  height: 80vh;
+  font-weight: 400;
+  font-size: 36px;
 }
 
 .modal-body {
@@ -432,6 +445,11 @@ input[data-error]::after {
   text-align: left;
   min-width: 424px;
 }
+@media screen and (max-width: 1024px) {
+  .hero-content {
+    min-width: 300px;
+  }
+}
 .hero-content::after {
   content: "";
   width: 100%;
@@ -449,6 +467,11 @@ input[data-error]::after {
   font-size: 6rem;
   font-weight: normal;
   white-space: nowrap;
+}
+@media screen and (max-width: 1024px) {
+  .hero-headline {
+    font-size: 4.8rem;
+  }
 }
 .hero-text {
   width: 146%;
@@ -472,6 +495,7 @@ input[data-error]::after {
   height: 100%;
   display: block;
   padding: 0;
+  object-fit: cover;
 }
 .copyrights {
   color: #fe142f;
