@@ -8,7 +8,9 @@ function editNav() {
 }
 
 // launch modal event
-modalBtn.addEventListener("click", launchModal);
+modalBtns.forEach((btn) => {
+  btn.addEventListener("click", launchModal);
+});
 // launch modal form
 function launchModal() {
   modalbg.classList.add("active");
@@ -49,9 +51,11 @@ function closeModal() {
 
 function initAddEventListenerModal() {
   // Add an event listener to the button that launches the modal
-  modalBtn.addEventListener("click", () => {
+  modalBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
       launchModal()
-  })
+    });
+  });
 
   // Add an event listener to the background of the modal
   modalbg.addEventListener("click", (event) => {
